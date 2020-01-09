@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  
+}
+
+body {
+  background-color: #dddddd;
 }
 
 .App-logo {
@@ -35,4 +40,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.join-button{
+  background-color: green;
+  border-color: green;
+  color:white;
+}
+
+.content{
+ 
+  margin: 1% !Important;
+  width: 60vw !Important;
+
 }
