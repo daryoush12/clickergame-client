@@ -78,7 +78,7 @@ export class JoinView extends Component {
               />
 
               <Button variant="contained" color="primary">
-                Primary
+               Join
               </Button>
 
               </FormGroup>
