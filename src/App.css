@@ -70,3 +70,66 @@ tr:nth-child(even) {
   width: 60vw !Important;
 
 }
+
+.userCircle {
+  background-color: cornflowerblue;
+
+  border: solid;
+  border-color: #282c34;
+  height: 80px;
+  width: 100px;
+  margin-left: 5px;
+}
+
+.userCircle-playerLetter{
+  text-align: center;
+  margin: 0;
+  padding-top: 6%;
+  font-size: 45px;
+  color: whitesmoke;
+
+}
+
+.player-score{
+  font-weight: bold;
+}
+
+.user-name-p{
+  margin: 0;
+  text-align: center;
+}
+
+.user-container{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width: 300px;
+}
+
+.test{
+ 
+}
+
+.game-container{
+  width: 35vw;
+  height: 40vh;
+  padding-top: 10%;
+  padding-left: 5%;
+}
+
+
+.joinview-container{
+
+  margin-top: 10% !Important;
+  width: 100%;
+}
+
+.page {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.Header{
+  height: 50px;
+  width: 100%;
+  background-color: grey;
+}
