@@ -57,13 +57,13 @@ export class GameView extends Component {
     console.log(this.state.Game);
 
     return (
-      <div>
-        {this.state.Game ? 
+     
+       
       <Grid container className = "game-container" spacing={3}>
           
         <Grid item xs={3}>
           <Paper>
-            {this.state.Game ? (
+          
               <div>
                 {" "}
                 {this.state.Game.Players.map((player, key) => (
@@ -83,9 +83,9 @@ export class GameView extends Component {
             <p>{this.state.Game.clicks}</p>
           </Paper>
         </Grid>
-      </Grid> : <div>Could not connect to game server.</div>
-          }
-      </div>
+      </Grid>
+          
+     
     );
   }
 }
