@@ -26,63 +26,70 @@ const useStyles = makeStyles(theme => ({
   textField: {
     width: 200,
   },
+  button: {
+    margin: theme.spacing(1),
+  },
 }));
 
 export class JoinView extends Component {
-  onFormSubmit(data) {
-    const uuidv1 = require("uuid/v1");
-
-    data.id = uuidv1();
-
-    this.props.createPlayer(data);
-  }
-
-  setPlayerName(e) {
-    console.log(e.target.value);
-  }
 
   constructor() {
     super();
     this.state = {
-      formData: ""
+      name: ''
     };
   }
 
+  onFormSubmit = () => {
+
+    var Player = {"name":"", "id":""};
+
+    const uuidv1 = require("uuid/v1");
+
+    Player.name = this.state.name;
+    Player.id = uuidv1();
+
+    this.props.createPlayer(Player);
+  }
+
+  setPlayerName = (e) => {
+    console.log(e.target.value);
+    this.setState({name: e.target.value});
+
+  }
+
+
+
   render() {
     console.log(this.props);
-    console.log(this.props.Player);
+   // console.log(this.props.Player);
     return (
       <Grid spacing={3} container
       direction="row"
       justify="center"
       alignItems="flex-end" >
-        <Grid item xs={4} justify="center" alignItems="center" className="joinview-container">
-          <Paper>
+        <Grid item xs={4} container justify="center" alignItems="center" className="joinview-container">
+          <Paper className="join-paper">
           
       
-            <FormControl>
-              <FormGroup>
+         
+            
               <FormHelperText id="my-helper-text">
-                Fill out some information before joining game..
+                <p>
+                  Choose your destiny
+                </p>
+                
               </FormHelperText>
+              <TextField id="filled-basic" value = {this.state.name} onChange={this.setPlayerName} label="Playername" variant="filled" />
 
-              <TextField
-               style={{ margin: 8 }}
-                label="Playername"
-                id="standard-full-width"
-                helperText="Some important text"
-                margin="normal"
-                variant="outlined"
-                fullWidth
-                onChange={this.setPlayerName}
-              />
+             
 
-              <Button variant="contained" color="primary">
+              <Button variant="contained" className ="join-button" onClick={this.onFormSubmit} color="primary">
                Join
               </Button>
 
-              </FormGroup>
-            </FormControl>
+             
+          
           </Paper>
         </Grid>
       </Grid>

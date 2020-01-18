@@ -15,7 +15,7 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="page">
-        <div className="Header"></div>
+        <div className="Header">A clicking Game</div>
         {this.props.hasSubmitted ? <GameView></GameView> : <JoinView></JoinView>}
       </div>
     );

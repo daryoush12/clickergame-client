@@ -133,3 +133,13 @@ tr:nth-child(even) {
   width: 100%;
   background-color: grey;
 }
+
+
+.join-paper {
+  padding: 10px;
+}
+
+.join-button{
+  height: 56px;
+  radius: 0;
+}
