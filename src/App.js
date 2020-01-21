@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="page">
         <div className="Header">A clicking Game</div>
-        {this.props.hasSubmitted ? <GameView></GameView> : <JoinView></JoinView>}
+        {this.props.Player ? <GameView></GameView> : <JoinView></JoinView>}
       </div>
     );
   }

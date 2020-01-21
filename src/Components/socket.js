@@ -2,7 +2,7 @@ import socketIOClient from "socket.io-client";
 
 export default function () {
 
-  const socket = new socketIOClient('localhost:3000');
+  const socket = new socketIOClient('localhost:4000');
 
   function registerHandler(onGameUpdate) {
     socket.on('GameInstance', onGameUpdate)

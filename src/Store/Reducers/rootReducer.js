@@ -14,6 +14,8 @@ function rootReducer(state = initialState, action) {
     if(action.type === GAME_CONNECT){ 
       return {...state, Connection: action.payload};
     }
+
+ 
     return {...state};
 };
 
