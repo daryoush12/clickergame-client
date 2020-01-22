@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/daryoush12/clickergame-client.svg?branch=master)](https://travis-ci.org/daryoush12/clickergame-client)
+
 This project is a Multiplayer game that is accessed from browser.
 
 
