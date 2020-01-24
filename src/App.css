@@ -149,3 +149,19 @@ tr:nth-child(even) {
   height: 56px;
   radius: 0;
 }
+
+.game-bt{
+  width: 400px;
+  height: 100px;
+  background-color: #282c34;
+  color:#eee;
+  font-weight: bold;
+}
+
+.score-txt{
+  color: #282c34;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding-top: 20px
+}

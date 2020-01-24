@@ -9,6 +9,7 @@ import socket from "../Components/socket";
 import { ConverseToArray } from "../Components/DataUtil";
 import RetryPromptModal from "../Components/RetryPromptModal";
 import { removePlayer } from "../Store/Actions";
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -101,12 +102,13 @@ export class GameView extends Component {
                   </div>
                 ) : (
                   <div>
-                    <button
+                    <h2 className="score-txt">Total clicks {this.state.Game.clicks}</h2>
+                    <Button variant="contained" className="game-bt"
                       onClick={e => this.handleClick(e, this.state.socket)}
                     >
                       Click me
-                    </button>
-                    <p>{this.state.Game.clicks}</p>
+                    </Button>
+                    
                   </div>
                 )}
               </Paper>
