@@ -2,7 +2,7 @@ import socketIOClient from "socket.io-client";
 
 export default function () {
 
-  const socket = new socketIOClient('https://clicker-server-dare.herokuapp.com/');
+  const socket = new socketIOClient('https://clicker-server-dare.herokuapp.com');
 
   function registerHandler(onGameUpdate) {
     socket.on('GameInstance', onGameUpdate)
