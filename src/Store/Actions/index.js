@@ -1,8 +1,16 @@
-import { CREATE_PLAYER, GAME_CONNECT, UPDATE_GAME } from "./Types/action-types";
+import { CREATE_PLAYER, GAME_CONNECT, UPDATE_GAME, REMOVE_PLAYER, RESET_APP } from "./Types/action-types";
 
 export function createPlayer(payload) {
   return { type: CREATE_PLAYER, payload}
 
+};
+
+export function removePlayer(payload) {
+  return { type: REMOVE_PLAYER, payload}
+};
+
+export function resetApp() {
+  return {type: RESET_APP};
 };
 
 

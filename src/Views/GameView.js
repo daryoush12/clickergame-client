@@ -8,6 +8,7 @@ import { createGameConnection, updateGame } from "../Store/Actions";
 import socket from "../Components/socket";
 import { ConverseToArray } from "../Components/DataUtil";
 import RetryPromptModal from "../Components/RetryPromptModal";
+import { removePlayer } from "../Store/Actions";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,6 +43,11 @@ export class GameView extends Component {
     socket.sendClick(this.props.Player);
   }
 
+  handleRestart(e, socket) {
+    e.preventDefault();
+    socket.resetPlayer(this.props.Player);
+  }
+
   testConversion(dict) {
     for (var key in dict) {
       var value = dict[key];
@@ -58,9 +64,9 @@ export class GameView extends Component {
     console.log(this.state);
     const LoopablePlayer = ConverseToArray(this.state.Game.Players);
     // {this.state.Game.Players.keys.map((keyx, key) => (<p key={key}>{this.state.Game.Players[keyx]}</p>))}
-    return (
+   return this.state.Game ?
+     (
       <div>
-        {this.state.Game ? (
           <Grid container className="game-container" spacing={3}>
             <Grid item xs={3}>
               <Paper>
@@ -84,13 +90,14 @@ export class GameView extends Component {
             <Grid item xs={6}>
               <Paper>
                 {this.state.Game.Players[this.props.Player.id].score < 1 ? (
-                  <div>Would you like to try again?
-                        <button >
-                   Yes
+                  <div>
+                    Would you like to try again?
+                    <button
+                      onClick={e => this.handleRestart(e, this.state.socket)}
+                    >
+                      Yes
                     </button>
-                    <button>
-                   No
-                    </button>
+                    <button>No</button>
                   </div>
                 ) : (
                   <div>
@@ -105,12 +112,11 @@ export class GameView extends Component {
               </Paper>
             </Grid>
           </Grid>
-        ) : (
-          <div>Loading.</div>
-        )}
+        ) 
+        }
       </div>
-    );
-  }
+    ) : <div>Loading.</div>
+}
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -122,7 +128,8 @@ const mapDispatchToProps = dispatch => {
   return {
     createGameConnection: connection =>
       dispatch(createGameConnection(connection)),
-    updateGame: game => dispatch(updateGame(game))
+      updateGame: game => dispatch(updateGame(game)),
+      removePlayer: player => dispatch(removePlayer(player))
   };
 };
 

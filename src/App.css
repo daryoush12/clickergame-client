@@ -33,6 +33,12 @@ body {
   color: #61dafb;
 }
 
+.app-title{
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  padding-left: 5px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

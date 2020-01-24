@@ -2,7 +2,7 @@ import socketIOClient from "socket.io-client";
 
 export default function () {
 
-  const socket = new socketIOClient('localhost:4000');
+  const socket = new socketIOClient('https://clicker-server-dare.herokuapp.com/');
 
   function registerHandler(onGameUpdate) {
     socket.on('GameInstance', onGameUpdate)
@@ -35,6 +35,12 @@ export default function () {
     socket.off('Click');
   }
 
+  function resetPlayer(Player){
+    socket.off('Click');
+    socket.emit('ResetPlayer', Player)
+    socket.off('Click');
+  }
+
  
   function getAvailableUsers(Player) {
     socket.emit('availableUsers', Player)
@@ -45,6 +51,7 @@ export default function () {
     join,
     leave,
     sendClick,
+    resetPlayer,
     registerHandler,
     unregisterHandler
   }

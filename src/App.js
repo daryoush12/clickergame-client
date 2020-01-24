@@ -15,12 +15,11 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="page">
-        <div className="Header">A clicking Game</div>
-        {this.props.Player ? <GameView></GameView> : <JoinView></JoinView>}
+        <div className="Header"><h2 className="app-title">Clicking Game Application</h2></div>
+        {this.props.Player != undefined ? <GameView></GameView> : <JoinView></JoinView>}
       </div>
     );
   }
-  
 }
 
 const mapStateToProps = (state, ownProps) => {
