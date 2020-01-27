@@ -3,7 +3,7 @@ import socketIOClient from "socket.io-client";
 export default function () {
 
   //https://clicker-server-dare.herokuapp.com
-  const socket = new socketIOClient('https://clicker-server-dare.herokuapp.com', {'force new connection': true});
+  const socket = new socketIOClient('localhost:4000', {'force new connection': true});
 
   function registerHandler(onGameUpdate) {
     socket.on('GameInstance', onGameUpdate)
