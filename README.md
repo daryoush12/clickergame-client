@@ -1,12 +1,11 @@
-[![Build Status](https://travis-ci.org/daryoush12/clickergame-client.svg?branch=master)](https://travis-ci.org/daryoush12/clickergame-client)
-
 This project is a Multiplayer game that is accessed from browser.
 
+Server Code : https://github.com/daryoush12/clicker-game-server
+URL : http://clicker-client-dare.herokuapp.com/
 
+## How to Play
 
-## How to run
-
-You can either pull the repository with git clone and while in the project folder run command:
+You can access the game from given url. Please note that servers are by default sleeping when there is inactivity. Give it few minutes to boot up!
 
 ### `npm start`
 
