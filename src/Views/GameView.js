@@ -49,6 +49,13 @@ export class GameView extends Component {
     socket.resetPlayer(this.props.Player);
   }
 
+  handleQuit(e, socket){
+    e.preventDefault();
+    localStorage.clear();
+    socket.leave(this.props.Player);
+    this.props.removePlayer(this.props.Player);
+  }
+
   testConversion(dict) {
     for (var key in dict) {
       var value = dict[key];
@@ -73,34 +80,40 @@ export class GameView extends Component {
               <Paper>
                 <div>
                   {LoopablePlayer.map((item, key) => (
+                   
                     <Grid container className="user-container">
                       <Grid className="userCircle" xs={3}>
                         <p className="userCircle-playerLetter">
-                          {item.name.charAt(0)}
+                          {item.name.charAt(0).toUpperCase()}
                         </p>
                       </Grid>
+                      {item.id == this.props.Player.id ? 
                       <Grid xs={4} className="user-name-p" key={key}>
+                        <p className="test">You</p>
+                        <p className="player-score">{item.score} Points</p>{" "}
+                      </Grid>: <Grid xs={4} className="user-name-p" key={key}>
                         <p className="test">{item.name}</p>
                         <p className="player-score">{item.score} Points</p>{" "}
-                      </Grid>
+                      </Grid>}
                     </Grid>
+                      
                   ))}
                 </div>
               </Paper>
             </Grid>
             <Grid item xs={6}>
-              <Paper>
-                {this.state.Game.Players[this.props.Player.id].score < 1 ? (
+              <Paper className="game-canvas">
+                {this.state.Game.Players[this.props.Player.id].score < 1 ? 
                   <div>
-                    Would you like to try again?
-                    <button
+                    <p className="prompt-txt">Would you like to try again?</p>
+                    <button className="prompt-bt"
                       onClick={e => this.handleRestart(e, this.state.socket)}
                     >
                       Yes
                     </button>
-                    <button>No</button>
+                    <button className="prompt-bt" onClick = {e => this.handleQuit(e, this.state.socket)} >No</button>
                   </div>
-                ) : (
+                 : (
                   <div>
                     <h2 className="score-txt">Total clicks {this.state.Game.clicks}</h2>
                     <Button variant="contained" className="game-bt"
@@ -114,8 +127,8 @@ export class GameView extends Component {
               </Paper>
             </Grid>
           </Grid>
-        ) 
-        }
+         
+        
       </div>
     ) : <div>Loading.</div>
 }

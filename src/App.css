@@ -122,6 +122,9 @@ tr:nth-child(even) {
   padding-left: 5%;
 }
 
+.game-canvas {
+  padding: 20px;
+}
 
 .joinview-container{
 
@@ -151,12 +154,16 @@ tr:nth-child(even) {
 }
 
 .game-bt{
-  width: 400px;
+ 
+  width: 100%;
   height: 100px;
+  margin-top: 20px !important;
   background-color: #282c34;
   color:#eee;
   font-weight: bold;
+ 
 }
+
 
 .score-txt{
   color: #282c34;
@@ -164,4 +171,15 @@ tr:nth-child(even) {
   text-align: center;
   margin: 0;
   padding-top: 20px
+}
+
+.prompt-txt {
+text-align: center;
+}
+
+.prompt-bt{
+  height: 50px;
+  width: 47%;
+  /* padding: 5px; */
+  margin: 10px;
 }
