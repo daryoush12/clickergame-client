@@ -1,8 +1,8 @@
 ## Clicking Game
 
-This project is a React and Node based multiplayer browser game where your only goal is to click.
+This project is a React and Node.js based multiplayer browser game where your only goal is to click.
 
-Server Code Repositoru : https://github.com/daryoush12/clicker-game-server
+Server Code Repository : https://github.com/daryoush12/clicker-game-server
 
 URL To access this game : http://clicker-client-dare.herokuapp.com/
 
